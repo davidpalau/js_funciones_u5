@@ -15,18 +15,24 @@ píxeles y siempre será del mismo color que el borde de las celdas.
 
 function tabla(filas_1 = 10, columnas_1 = 4, color_1 = "black"){
 
-   document.body.style.tableLayout.borderColor = "red";
-
-document.write("<table>");
+document.write("<table style='border-collapse: collapse; border: solid 3px "+color_1+";>");
 for(let i = 0; i < filas_1; i++){
-    document.write("<tr>");
+    document.write("<tr style='border-collapse: collapse; border: solid 1px "+ color_1+";'>");
 for(let j = 0; j < columnas_1; j++){
 
-    document.write("<td> Celda </td>");
+    document.write("<td style='border-collapse: collapse; border: solid 1px "+ color_1+";'>Celda </td>");
 }
 document.write("<tr>");
 }
 document.write("</table>");
+
 }
 
 tabla();
+document.write("<br>");
+tabla(20,10, "black")
+
+for(let i = 0; i < 10; i++){
+    document.write("<br>");
+    tabla(5, 4, "green");
+}
