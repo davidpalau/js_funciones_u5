@@ -14,6 +14,9 @@ píxeles y siempre será del mismo color que el borde de las celdas.
 
 
 function tabla(filas_1 = 10, columnas_1 = 4, color_1 = "black"){
+
+   document.body.style.tableLayout.borderColor = "red";
+
 document.write("<table>");
 for(let i = 0; i < filas_1; i++){
     document.write("<tr>");
