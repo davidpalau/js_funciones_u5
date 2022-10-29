@@ -15,3 +15,58 @@ ACTIVIDAD 7 – Función para detectar palíndromos
 ignorado (el carácter a se considera igual que el carácter á) y no se distingue
 entre mayúsculas y minúsculas.
  */
+
+window.addEventListener("load", inicio, true);
+
+function inicio() {
+
+    let str_1 = window.prompt("Introduce un palindromo: ");
+
+    str_1 = str_1.toLocaleLowerCase();
+    console.log(str_1);
+    let str_2 = "";
+    let str_3 = "";
+    let letras = "abcdefghijklmnñopqrstuvwxyz";
+    let palindromo = true;
+    console.log(str_1);
+    //Quitar acentos de las vocales
+    for (let i = 0; i < str_1.length; i++) {
+        if ("àá".indexOf(str_1[i]) != -1) {
+            str_2 += "a";
+        } else if ("éè".indexOf(str_1[i]) != -1) {
+            str_2 += "e";
+        } else if ("íì".indexOf(str_1[i]) != -1) {
+            str_2 += "i";
+        } else if (("óò".indexOf(str_1[i]) != -1)) {
+            str_2 += "o";
+        } else if ("úúü".indexOf(str_1[i]) != -1) {
+            str_2 += "u";
+        } else if (letras.indexOf(str_1[i]) != -1) {
+            str_2 += str_1[i];
+        }
+
+
+    }
+
+  
+    
+    // realiza una copia de string pero a la inversa.
+    for (let i = str_2.length - 1; i >= 0; i--) {
+        str_3 += str_2[i];
+    }
+    //Compara copia inversa con original 
+    console.log(str_2);
+    for (let i = 0; i < str_2.length; i++) {
+        if (str_2[i] != str_3[i]) {
+            palindromo = false;
+        }
+    }
+    //respuesta 
+    if (palindromo) {
+        document.write("Sí es un palindromo");
+        console.log("Sí es un palindromo");
+    } else {
+        console.log("No es un palindromo");
+        document.write("No es un palindromo");
+    }
+}

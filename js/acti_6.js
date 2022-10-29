@@ -11,26 +11,9 @@ recursive solution.
 
  */
 
-function fibonacci(n) {
-    if (n == 0 || n == 1) {
-        //En caso de posición 0 y 1 en valor coincide con la posición 
-        return n;
-    } else if (n >= 2) {
-        return fibonacci(n - 1) + fibonacci(n - 2);
-
-    }
-   
-}
-console.log(fibonacci(2));
-console.log(fibonacci(2));
-console.log(fibonacci(5));
-console.log(fibonacci(6));
-console.log(fibonacci(7));
-console.log(fibonacci(8));
-console.log(fibonacci(9));
 
 
-window.addEventListener("load", inicio, true);
+//window.addEventListener("load", inicio, true);
 
 function inicio() {
     let num = parseInt(prompt("Introduce un número positivo: "));
@@ -45,7 +28,7 @@ function inicio() {
     document.write("En número fibonacci que corresponde es " + fibonacci_1(num));
 }
 //Con array es facil de hacer por que se entiende mejor.
-function fibonacci_1(n) {
+function fibonacci(n) {
     let fiboArray = [0, 1]
     if (n == 0 || n == 1) {
         //En caso de posición 0 y 1 en valor cuicide con la posición 
@@ -61,13 +44,29 @@ function fibonacci_1(n) {
 }
 
 //Pruebas para estar seguro que funciona.
-console.log(fibonacci_1(2));
-console.log(fibonacci_1(2));
-console.log(fibonacci_1(5));
-console.log(fibonacci_1(6));
-console.log(fibonacci_1(7));
-console.log(fibonacci_1(8));
-console.log(fibonacci_1(9));
+console.log(fibonacci(0));
+console.log(fibonacci(1));
+console.log(fibonacci(2));
+console.log(fibonacci(3));
+console.log(fibonacci(4));
+console.log(fibonacci(5));
+console.log(fibonacci(6));
+console.log(fibonacci(7));
+document.write(fibonacci(0));
+document.write("<br>");
+document.write(fibonacci(1));
+document.write("<br>");
+document.write(fibonacci(2));
+document.write("<br>");
+document.write(fibonacci(3));
+document.write("<br>");
+document.write(fibonacci(4));
+document.write("<br>");
+document.write(fibonacci(5));
+document.write("<br>");
+document.write(fibonacci(6));
+document.write("<br>");
+document.write(fibonacci(7));
 
 
 
