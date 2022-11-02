@@ -14,19 +14,14 @@ de 1 a 1000.
  */
 
 function primo(numero){
-
-
    // num_primo = false;
     for( let i = 2; i<= (numero/2);i++ ){
         if(numero%i == 0){
             return " no es primo.";
-        
         }
     }
-
     return " es primo.";
 }
-
 for(let i = 2; i <= 1000; i++){
     document.write("El número "+i+ primo(i));
 }

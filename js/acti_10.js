@@ -27,7 +27,14 @@ function filtro() {
     console.log(resultado_1);
     console.log(resultado_2);
     console.log(resultado_3);
-
+    document.write("<p>Filtro en caso de número ser dibisible entre 2: </p>");
+    document.write(resultado);
+    document.write("<p>Filtro en caso de número ser dibisible entre 3: </p>");
+    document.write(resultado_1);
+    document.write("<p>Filtro en caso de número ser menor de 21: </p>");
+    document.write(resultado_2);
+    document.write("<p>Filtro en caso de número ser mayor entre 2: </p>");
+    document.write(resultado_3);
 
 
     const otroArray = [
@@ -42,8 +49,15 @@ function filtro() {
 
     let resultado_4 = otroArray.filter((persona) => (persona.nombre == "David"));
     let resultado_5 = otroArray.filter((persona) => (persona.edad > 19));
-    console.log(resultado_4);
-    console.log(resultado_5);
+        document.write("<p>Filtro en caso de nombre ser David</p>");
+        resultado_4.forEach(element => {
+            document.write("<p> Nombre: "+ element.nombre +" la edad: "+element.edad +".</p>");
+        });
+        document.write("<p>Filtro en caso de edad ser mayor de 19: </p>");
+        resultado_5.forEach(element => {
+            document.write("<p> Nombre: "+ element.nombre +" la edad: "+element.edad +".</");
+        });
+
 }
 
 filtro();
