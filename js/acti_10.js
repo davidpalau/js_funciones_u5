@@ -16,48 +16,36 @@ establecido en la función de devolución de llamada.
 
 function filtro() {
 
-    const miArray = [3, 16, 23, 65, 35, 19, 15, 7];
+    const miArray = [3, 16, 23, 65, 35, 18, 19, 15, 7];
+    var resultado_1 = [];
+    var contador = 0;
 
-    let resultado = miArray.filter(valor => valor % 2 == 0);
-    let resultado_1 = miArray.filter(valor => valor % 3 == 0);
-    let resultado_2 = miArray.filter(valor => valor < 21 == 0);
-    let resultado_3 = miArray.filter(valor => valor > 21 == 0);
 
-    console.log(resultado);
+    miArray.forEach(element => {
+        //Filtra los número multiplos de 2, o elegir otro número
+        if (element % 2 == 0) {
+            resultado_1[contador] = element;
+            contador++;
+            return true
+        } else {
+            return false;
+        }
+    });
+
+    miArray.forEach(element => {
+        //Filtra los número NO multiplos de 2, o elegir otro número
+        if (element % 2 != 0) {
+            resultado_2[contador] = element;
+            contador++;
+            return true
+        } else {
+            return false;
+        }
+    });
+    document.write("<p>Filtro de los número multiplos de 2: </p>");
     console.log(resultado_1);
+    document.write("<p>Filtro de los NO número multiplos de 2: </p>");
     console.log(resultado_2);
-    console.log(resultado_3);
-    document.write("<p>Filtro en caso de número ser dibisible entre 2: </p>");
-    document.write(resultado);
-    document.write("<p>Filtro en caso de número ser dibisible entre 3: </p>");
-    document.write(resultado_1);
-    document.write("<p>Filtro en caso de número ser menor de 21: </p>");
-    document.write(resultado_2);
-    document.write("<p>Filtro en caso de número ser mayor entre 2: </p>");
-    document.write(resultado_3);
-
-
-    const otroArray = [
-        {
-            nombre: "David",
-            edad: 47
-        },
-        {
-            nombre: "Tony",
-            edad: 21
-        }]
-
-    let resultado_4 = otroArray.filter((persona) => (persona.nombre == "David"));
-    let resultado_5 = otroArray.filter((persona) => (persona.edad > 19));
-        document.write("<p>Filtro en caso de nombre ser David</p>");
-        resultado_4.forEach(element => {
-            document.write("<p> Nombre: "+ element.nombre +" la edad: "+element.edad +".</p>");
-        });
-        document.write("<p>Filtro en caso de edad ser mayor de 19: </p>");
-        resultado_5.forEach(element => {
-            document.write("<p> Nombre: "+ element.nombre +" la edad: "+element.edad +".</");
-        });
-
 }
 
 filtro();
