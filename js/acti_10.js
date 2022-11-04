@@ -13,25 +13,10 @@ establecido en la función de devolución de llamada.
  */
 
 //window.addEventListener("load", inicio, true);
-
-function filtro() {
-
-    const miArray = [3, 16, 23, 65, 35, 18, 19, 15, 7];
+const miArray = [3, 16, 23, 65, 35, 18, 19, 15, 7];
+function filtro(miArray, element => {
     var resultado_1 = [];
     var contador = 0;
-
-
-    miArray.forEach(element => {
-        //Filtra los número multiplos de 2, o elegir otro número
-        if (element % 2 == 0) {
-            resultado_1[contador] = element;
-            contador++;
-            return true
-        } else {
-            return false;
-        }
-    });
-
     miArray.forEach(element => {
         //Filtra los número NO multiplos de 2, o elegir otro número
         if (element % 2 != 0) {
@@ -42,10 +27,7 @@ function filtro() {
             return false;
         }
     });
-    document.write("<p>Filtro de los número multiplos de 2: </p>");
-    console.log(resultado_1);
-    document.write("<p>Filtro de los NO número multiplos de 2: </p>");
-    console.log(resultado_2);
-}
 
-filtro();
+};
+
+
