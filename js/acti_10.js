@@ -13,21 +13,38 @@ establecido en la función de devolución de llamada.
  */
 
 //window.addEventListener("load", inicio, true);
-const miArray = [3, 16, 23, 65, 35, 18, 19, 15, 7];
-function filtro(miArray, element => {
-    var resultado_1 = [];
-    var contador = 0;
-    miArray.forEach(element => {
-        //Filtra los número NO multiplos de 2, o elegir otro número
-        if (element % 2 != 0) {
-            resultado_2[contador] = element;
-            contador++;
-            return true
-        } else {
-            return false;
-        }
-    });
+const numeros = [3, 16, 23, 65, 35, 18, 19, 15, 7];
+const nombres = ["Sandra", "David", "Toni", "Gemma"]
 
-};
+console.log(filtro(numeros,x => x % 2 === 0)) ;
+console.log(filtro(numeros, x => x % 3 === 0 )) ;
+console.log(filtro(nombres, x => x == "David")) ;
+console.log(filtro(nombres, x => x == "Toni")) ;
+console.log(filtro(nombres, x => x != "Toni")) ;
+
+document.write("<p> divisores del dos: "+filtro(numeros,x => x % 2 === 0)+".</p>") ;
+document.write("<p> divisores del tres: "+filtro(numeros, x => x % 3 === 0 )+".</p>") ;
+document.write("<p> Mi nombre es "+filtro(nombres, x => x == "David") + ".</p>") ;
+document.write("<p> La profesora de js es  "+filtro(nombres, x => x == "Gemma")+".</p>") ;
+document.write("<p> Todos menos Sandra: "+filtro(nombres, x => x != "Sandra")+".</p>") ;
+document.write("<p> Todos: "+filtro(nombres, x => x )+".</p>") ;
+function filtro(miArray, callback){
+ filtrado = [];
+
+    contador = 0;
+    for(var i = 0; i < miArray.length; i++){
+
+        if(callback(miArray[i])){
+            filtrado[contador] = miArray[i];
+            contador++;
+        }
+
+      
+
+
+}
+return filtrado;
+
+}
 
 
